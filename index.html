@@ -3,452 +3,678 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three-Crisis Convergence</title>
+    <title>The Three-Crisis Convergence: A Call for America's Second Reconstruction</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
-        
+
         .header {
             text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .branding {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            font-style: italic;
-        }
-        
-        .footer-branding {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .crisis-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .crisis-card {
-            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
+        }
+
+        .main-title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #34495e;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .organization {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .freedoms-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .freedoms-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .freedoms-intro {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .freedoms-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .freedom-item {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .freedom-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .freedom-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .freedom-name {
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .freedom-tagline {
+            font-size: 0.75em;
+            opacity: 0.9;
+            line-height: 1.3;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 30px;
-            border: 2px solid;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .crisis-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .crisis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .crisis-card {
+            border-radius: 15px;
+            padding: 25px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
-        .crisis-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
+
         .crisis-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: 0;
+            background: inherit;
+            border-radius: inherit;
+            opacity: 0.9;
+            z-index: 1;
         }
-        
+
+        .crisis-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .crisis-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
         .political {
-            --primary-color: #ff6b6b;
-            --secondary-color: #ff8e53;
-            border-color: #ff6b6b;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
         }
-        
+
         .economic {
-            --primary-color: #4ecdc4;
-            --secondary-color: #44a08d;
-            border-color: #4ecdc4;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
         }
-        
+
         .climate {
-            --primary-color: #45b7d1;
-            --secondary-color: #96c93d;
-            border-color: #45b7d1;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
         }
-        
-        .crisis-icon {
-            font-size: 3rem;
+
+        .crisis-header {
+            text-align: center;
             margin-bottom: 20px;
-            display: block;
         }
-        
+
         .crisis-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
-        
-        .crisis-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            opacity: 0.8;
+
+        .crisis-desc {
+            font-size: 1em;
             font-style: italic;
+            opacity: 0.9;
         }
-        
+
         .crisis-stats {
             list-style: none;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-        
+
         .crisis-stats li {
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
+            font-size: 0.95em;
+            line-height: 1.4;
         }
-        
+
         .crisis-stats li::before {
-            content: '⚡';
+            content: '▶';
             position: absolute;
             left: 0;
-            color: var(--primary-color);
+            font-weight: bold;
+            color: rgba(255,255,255,0.8);
         }
-        
-        .crisis-stats small {
+
+        .source {
+            font-size: 0.8em;
             opacity: 0.7;
-            font-size: 0.8rem;
             font-style: italic;
-            color: #ccc;
         }
-        
-        .amplification-section {
-            margin: 60px 0;
+
+        .scale {
+            font-weight: bold;
+            font-size: 1em;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255,255,255,0.3);
             text-align: center;
         }
-        
-        .amplification-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .amplification-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
         }
-        
+
+        .amplification-intro {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            color: #ecf0f1;
+        }
+
         .amplification-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-bottom: 25px;
         }
-        
+
         .amplification-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            border-left: 5px solid;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            transition: background 0.3s ease;
         }
-        
-        .amp-political { border-color: #ff6b6b; }
-        .amp-economic { border-color: #4ecdc4; }
-        .amp-climate { border-color: #45b7d1; }
-        .amp-combined { border-color: #ffd93d; }
-        
+
+        .amplification-card:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .amplification-card h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .amplification-card ul {
+            list-style: none;
+        }
+
+        .amplification-card li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.95em;
+        }
+
+        .amplification-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
         .death-spiral {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
+            background: rgba(231, 76, 60, 0.1);
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
         }
-        
+
+        .death-spiral h3 {
+            color: #e74c3c;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
         .spiral-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
         }
-        
+
         .spiral-step {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px;
-            flex: 1;
-            min-width: 200px;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-align: center;
         }
-        
+
         .choice-section {
-            margin: 60px 0;
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
         }
-        
+
+        .choice-intro {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+
         .choice-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 30px;
         }
-        
-        .choice-card {
-            border-radius: 20px;
-            padding: 30px;
+
+        .choice-option {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-        
-        .choice-failure {
-            background: linear-gradient(135deg, #ff6b6b, #c44569);
-            border: 3px solid #ff6b6b;
+
+        .choice-option:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
         }
-        
-        .choice-success {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            border: 3px solid #4ecdc4;
+
+        .failure {
+            border-color: #e74c3c;
         }
-        
-        .choice-card:hover {
-            transform: scale(1.05);
+
+        .success {
+            border-color: #27ae60;
         }
-        
+
         .choice-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
-        
-        .cta {
+
+        .choice-content {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
             text-align: center;
-            margin-top: 50px;
-            padding: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
         }
-        
-        .cta h2 {
-            font-size: 2rem;
+
+        .cta-text {
+            font-size: 1.4em;
+            font-weight: bold;
             margin-bottom: 20px;
         }
-        
+
+        .cta-subtitle {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
         @media (max-width: 768px) {
-            .header h1 { font-size: 2rem; }
-            .crisis-grid { grid-template-columns: 1fr; }
-            .amplification-grid { grid-template-columns: 1fr; }
-            .choice-grid { grid-template-columns: 1fr; }
-            .spiral-steps { flex-direction: column; }
+            .main-title {
+                font-size: 2em;
+            }
+
+            .freedoms-list {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .crisis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amplification-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spiral-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .choice-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        
-        .arrow {
-            font-size: 2rem;
-            color: #ffd93d;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .freedoms-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>The Three-Crisis Convergence</h1>
-            <p>Why Comprehensive Response is Essential</p>
-            <div class="branding">
-                <p>© 2025 Center for the Study of the Force Majeure</p>
+            <h1 class="main-title">The Three-Crisis Convergence</h1>
+            <p class="subtitle">A Call for America's Second Reconstruction</p>
+            <p class="organization">Center for the Study of the Force Majeure</p>
+        </div>
+
+        <div class="freedoms-banner">
+            <h2 class="freedoms-title">The Five Freedoms Framework</h2>
+            <p class="freedoms-intro">
+                FDR's Four Freedoms guided America through its darkest hour. Today, the climate crisis gives rise to a fifth freedom—indeed, our survival depends upon it.
+            </p>
+            <div class="freedoms-list">
+                <div class="freedom-item">
+                    <div class="freedom-number">1</div>
+                    <div class="freedom-name">Freedom of Speech</div>
+                    <div class="freedom-tagline">Everyone's voice matters—not just the few at the top</div>
+                </div>
+                <div class="freedom-item">
+                    <div class="freedom-number">2</div>
+                    <div class="freedom-name">Freedom of Worship</div>
+                    <div class="freedom-tagline">Freedom of religion and freedom from religion—both protected by equal justice</div>
+                </div>
+                <div class="freedom-item">
+                    <div class="freedom-number">3</div>
+                    <div class="freedom-name">Freedom from Want</div>
+                    <div class="freedom-tagline">Economic security enabling civic participation</div>
+                </div>
+                <div class="freedom-item">
+                    <div class="freedom-number">4</div>
+                    <div class="freedom-name">Freedom from Fear</div>
+                    <div class="freedom-tagline">Safety in your person, home, and livelihood</div>
+                </div>
+                <div class="freedom-item">
+                    <div class="freedom-number">5</div>
+                    <div class="freedom-name">Freedom to a Livable Planet</div>
+                    <div class="freedom-tagline">Human society and thriving planet supporting each other</div>
+                </div>
             </div>
         </div>
-        
-        <div class="crisis-grid">
-            <div class="crisis-card political">
-                <span class="crisis-icon">🏛️</span>
-                <h2 class="crisis-title">CRISIS #1: POLITICAL FRACTURE</h2>
-                <p class="crisis-subtitle">Social Division Approaching Civil War Levels</p>
-                <ul class="crisis-stats">
-                    <li>Americans live in <strong>parallel realities</strong> with incompatible facts</li>
-                    <li>Political polarization hardened into <strong>mutual dehumanization</strong> <small>(Pew Research 2024)</small></li>
-                    <li>Violence simmers beneath political discourse</li>
-                    <li><strong>Democratic norms crumbling</strong> under competing national visions</li>
-                    <li>Return of <strong>Gilded Age plutocracy</strong> with extreme wealth concentration <small>(Oxfam 2024)</small></li>
-                </ul>
-                <p><strong>Scale:</strong> 1850s-level division that preceded Civil War</p>
-            </div>
+
+        <div class="section">
+            <h2 class="section-title">Three Converging Crises</h2>
+            <p class="crisis-subtitle">America faces simultaneous challenges of unprecedented scale</p>
             
-            <div class="crisis-card economic">
-                <span class="crisis-icon">🤖</span>
-                <h2 class="crisis-title">CRISIS #2: ECONOMIC DISRUPTION</h2>
-                <p class="crisis-subtitle">AI Displacement Rivaling the Great Depression</p>
-                <ul class="crisis-stats">
-                    <li><strong>40% of employers</strong> expect AI-driven workforce reduction <small>(WEF 2025)</small></li>
-                    <li>Entire professions face automation: law, medicine, accounting, journalism</li>
-                    <li><strong>Decades of change compressed into years</strong></li>
-                    <li>Middle-class economic security disappearing faster than opportunities emerge</li>
-                    <li><strong>85 million jobs</strong> projected for displacement by 2025 <small>(WEF 2020)</small></li>
-                </ul>
-                <p><strong>Scale:</strong> 1929-level economic devastation with technological acceleration</p>
-            </div>
-            
-            <div class="crisis-card climate">
-                <span class="crisis-icon">🌍</span>
-                <h2 class="crisis-title">CRISIS #3: CLIMATE EMERGENCY</h2>
-                <p class="crisis-subtitle">Environmental Collapse Demanding Collective Action</p>
-                <ul class="crisis-stats">
-                    <li>Extreme weather devastating communities needing resilience most <small>(IPCC 2023)</small></li>
-                    <li><strong>Climate displacement</strong> straining services as resources shrink</li>
-                    <li>Environmental collapse threatens survival itself</li>
-                    <li>Democratic institutions <strong>cannot respond collectively</strong> to scale of crisis</li>
-                    <li>Crisis demands national mobilization that <strong>divided societies cannot sustain</strong></li>
-                </ul>
-                <p><strong>Scale:</strong> Unprecedented existential threat requiring WWII-scale mobilization</p>
+            <div class="crisis-grid">
+                <div class="crisis-card political">
+                    <div class="crisis-header">
+                        <h3 class="crisis-title">CRISIS #1: POLITICAL FRACTURE</h3>
+                        <p class="crisis-desc">Social Division Approaching Civil War Levels</p>
+                    </div>
+                    <ul class="crisis-stats">
+                        <li>Americans live in <strong>parallel realities</strong> with incompatible facts</li>
+                        <li>Political polarization hardened into <strong>mutual dehumanization</strong> <span class="source">(Pew Research 2024)</span></li>
+                        <li>Violence simmers beneath political discourse</li>
+                        <li><strong>Democratic norms crumbling</strong> under competing national visions</li>
+                        <li>Return of <strong>Gilded Age plutocracy</strong> with extreme wealth concentration <span class="source">(Oxfam 2024)</span></li>
+                    </ul>
+                    <p class="scale"><strong>Scale:</strong> 1850s-level division that preceded Civil War</p>
+                </div>
+                
+                <div class="crisis-card economic">
+                    <div class="crisis-header">
+                        <h3 class="crisis-title">CRISIS #2: ECONOMIC DISRUPTION</h3>
+                        <p class="crisis-desc">AI Displacement Rivaling the Great Depression</p>
+                    </div>
+                    <ul class="crisis-stats">
+                        <li><strong>40% of employers</strong> expect AI-driven workforce reduction <span class="source">(WEF 2025)</span></li>
+                        <li>Entire professions face automation: law, medicine, accounting, journalism</li>
+                        <li><strong>Decades of change compressed into years</strong></li>
+                        <li>Middle-class economic security disappearing faster than opportunities emerge</li>
+                        <li><strong>85 million jobs</strong> projected for displacement by 2025 <span class="source">(WEF 2020)</span></li>
+                    </ul>
+                    <p class="scale"><strong>Scale:</strong> 1929-level economic devastation with technological acceleration</p>
+                </div>
+                
+                <div class="crisis-card climate">
+                    <div class="crisis-header">
+                        <h3 class="crisis-title">CRISIS #3: CLIMATE EMERGENCY</h3>
+                        <p class="crisis-desc">Environmental Collapse Threatening Survival</p>
+                    </div>
+                    <ul class="crisis-stats">
+                        <li><strong>Environmental collapse</strong> threatens human survival</li>
+                        <li>Climate disasters overwhelm weakened institutions <span class="source">(IPCC 2023)</span></li>
+                        <li><strong>Divided societies cannot coordinate</strong> response at required scale</li>
+                        <li>Future generations inherit uninhabitable planet</li>
+                        <li><strong>Collective action impossible</strong> without functional democracy</li>
+                    </ul>
+                    <p class="scale"><strong>Scale:</strong> Existential threat requiring mobilization beyond WWII</p>
+                </div>
             </div>
         </div>
-        
-        <div class="amplification-section">
-            <h2 class="amplification-title">⚡ THE AMPLIFICATION EFFECT ⚡</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 30px;">These Crises Don't Just Coexist—They Multiply Each Other</p>
+
+        <div class="section amplification-section">
+            <h2 class="section-title">Why These Crises Amplify Each Other</h2>
+            <p class="amplification-intro">These are not separate problems requiring separate solutions—they feed on each other, accelerating democratic breakdown</p>
             
             <div class="amplification-grid">
-                <div class="amplification-card amp-political">
-                    <h3>Political Fracture ➜ Economic Disruption</h3>
+                <div class="amplification-card">
+                    <h3>Political + Economic = Plutocracy</h3>
                     <ul>
-                        <li><strong>Paralyzed government</strong> cannot respond to AI displacement</li>
-                        <li><strong>Partisan deadlock</strong> prevents economic transition support</li>
-                        <li><strong>Regulatory capture</strong> allows tech monopolies to eliminate jobs without accountability</li>
-                        <li><strong>Social safety nets</strong> blocked by political dysfunction</li>
+                        <li>Economic desperation fuels political extremism</li>
+                        <li>Corporate capture corrupts democratic institutions</li>
+                        <li>Polarization prevents economic policy coordination</li>
+                        <li>Wealth concentration makes inequality permanent</li>
                     </ul>
                 </div>
                 
-                <div class="amplification-card amp-economic">
-                    <h3>Economic Disruption ➜ Political Fracture</h3>
+                <div class="amplification-card">
+                    <h3>Political + Climate = Paralysis</h3>
                     <ul>
-                        <li><strong>Economic desperation</strong> fuels political extremism and scapegoating</li>
-                        <li><strong>Job losses</strong> drive support for authoritarian solutions</li>
-                        <li><strong>Economic inequality</strong> destroys social cohesion and shared identity</li>
-                        <li><strong>Desperate communities</strong> become vulnerable to demagogues</li>
+                        <li>Social fracture prevents collective climate action</li>
+                        <li>Climate disasters increase social stress and conflict</li>
+                        <li>Authoritarian governments prioritize short-term control</li>
+                        <li>Climate migration strains weakened institutions</li>
                     </ul>
                 </div>
                 
-                <div class="amplification-card amp-climate">
-                    <h3>Climate Crisis ➜ Both Other Crises</h3>
+                <div class="amplification-card">
+                    <h3>Economic + Climate = Collapse</h3>
                     <ul>
-                        <li><strong>Climate disasters</strong> overwhelm already-strained institutions</li>
-                        <li><strong>Resource scarcity</strong> intensifies political competition and social division</li>
-                        <li><strong>Climate displacement</strong> creates economic disruption and social tension</li>
-                        <li><strong>Environmental collapse</strong> makes economic planning impossible</li>
+                        <li>Climate costs overwhelm disrupted economies</li>
+                        <li>Economic insecurity prevents sustainable choices</li>
+                        <li>Fossil fuel interests block economic transition</li>
+                        <li>Climate adaptation requires massive economic coordination</li>
                     </ul>
                 </div>
                 
-                <div class="amplification-card amp-combined">
-                    <h3>Political + Economic Crises ➜ Climate Crisis</h3>
+                <div class="amplification-card">
+                    <h3>All Three Together = Death Spiral</h3>
                     <ul>
-                        <li><strong>Divided societies</strong> cannot coordinate climate response at required scale</li>
-                        <li><strong>Economic disruption</strong> prevents investment in climate solutions</li>
-                        <li><strong>Short-term thinking</strong> dominates when institutions are failing</li>
-                        <li><strong>International cooperation</strong> impossible when domestic democracy is collapsing</li>
+                        <li>Trust collapse prevents institutional solutions</li>
+                        <li>Economic insecurity eliminates civic participation</li>
+                        <li>Climate chaos overwhelms social systems</li>
+                        <li>Democratic governance becomes impossible</li>
                     </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="death-spiral">
-            <h2>🌀 THE DEATH SPIRAL 🌀</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">Without Intervention, This Creates a Self-Reinforcing Collapse</p>
-            
-            <div class="spiral-steps">
-                <div class="spiral-step">
-                    <strong>1. Economic disruption</strong><br>
-                    <span class="arrow">→</span> Political extremism<br>
-                    <span class="arrow">→</span> Institutional breakdown
-                </div>
-                <div class="spiral-step">
-                    <strong>2. Institutional breakdown</strong><br>
-                    <span class="arrow">→</span> Climate inaction<br>
-                    <span class="arrow">→</span> Environmental disasters
-                </div>
-                <div class="spiral-step">
-                    <strong>3. Environmental disasters</strong><br>
-                    <span class="arrow">→</span> Economic disruption<br>
-                    <span class="arrow">→</span> More political extremism
-                </div>
-                <div class="spiral-step">
-                    <strong>4. Repeat until democratic civilization collapses</strong>
+
+            <div class="death-spiral">
+                <h3>The Death Spiral: How Democracy Dies</h3>
+                <div class="spiral-steps">
+                    <div class="spiral-step">
+                        <strong>1. Economic Insecurity</strong><br>
+                        People can't afford to be citizens
+                    </div>
+                    <div class="spiral-step">
+                        <strong>2. Democratic Withdrawal</strong><br>
+                        Civic participation collapses
+                    </div>
+                    <div class="spiral-step">
+                        <strong>3. Institutional Capture</strong><br>
+                        Wealthy interests control government
+                    </div>
+                    <div class="spiral-step">
+                        <strong>4. Climate Catastrophe</strong><br>
+                        Authoritarian survival mode
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="choice-section">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">THE CHOICE IS CLEAR</h2>
+
+        <div class="section choice-section">
+            <h2 class="section-title">The Choice: Comprehensive Response or Complete Failure</h2>
+            <p class="choice-intro">Piecemeal solutions cannot address systemic breakdown</p>
             
             <div class="choice-grid">
-                <div class="choice-card choice-failure">
+                <div class="choice-option failure">
                     <h3 class="choice-title">❌ Partial Solutions = Complete Failure</h3>
-                    <p>Addressing one crisis while ignoring others guarantees all three get worse</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Band-aid approaches</li>
-                        <li>Incremental change</li>
-                        <li>Single-issue focus</li>
-                        <li>Political paralysis</li>
-                        <li>Democratic collapse</li>
-                    </ul>
+                    <div class="choice-content">
+                        <strong>Why incremental reform guarantees defeat:</strong><br><br>
+                        • Voting rights without campaign finance reform = corporate capture continues<br>
+                        • Climate policy without economic security = public backlash ensures failure<br>
+                        • Economic programs without democratic institutions = authoritarian capture<br><br>
+                        <em><strong>Result:</strong> Institutional collapse, climate catastrophe, economic oligarchy</em>
+                    </div>
                 </div>
                 
-                <div class="choice-card choice-success">
+                <div class="choice-option success">
                     <h3 class="choice-title">✅ Comprehensive Transformation = Democratic Renewal</h3>
-                    <p>The Second Reconstruction provides integrated solutions at the scale our challenges demand</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Systematic reform</li>
-                        <li>Coordinated response</li>
-                        <li>Historical precedent</li>
-                        <li>Proven solutions</li>
-                        <li>Democratic survival</li>
-                    </ul>
+                    <div class="choice-content">
+                        <strong>Why the Second Reconstruction works:</strong><br><br>
+                        • Democratic institutions that work for everyone<br>
+                        • Economic security enabling civic participation<br>
+                        • Climate governance at the scale required<br>
+                        • Truth and accountability breaking cycles of corruption<br><br>
+                        <em><strong>Result:</strong> Thriving democracy capable of 21st-century challenges</em>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="cta">
-            <h2>🇺🇸 The Second Reconstruction 🇺🇸</h2>
-            <p style="font-size: 1.3rem;">The time for incremental change has passed.<br>
-            America needs comprehensive reconstruction or faces democratic collapse.</p>
-            <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.9;">
-                Learn more about the complete framework at the Second Reconstruction Project
-            </p>
-            <div class="footer-branding">
-                <p>harrisonstudio@gmail.com | Center for the Study of the Force Majeure</p>
-            </div>
+
+        <div class="section call-to-action">
+            <p class="cta-text">The Tools Exist. The Precedents Are Proven. The Moment Demands Action.</p>
+            <p class="cta-subtitle">Explore the complete Second Reconstruction Project—comprehensive solutions for securing the Five Freedoms in the 21st century</p>
+            <a href="#" class="cta-button">View Complete Policy Framework</a>
+        </div>
+
+        <div class="footer">
+            <p><strong>The Second Reconstruction Project</strong></p>
+            <p>Center for the Study of the Force Majeure</p>
+            <p>Contact: harrisonstudio@gmail.com</p>
+            <p style="margin-top: 10px; font-style: italic;">"Democracy will not save itself. This is our generation's moment to prove that democracy can evolve, adapt, and thrive."</p>
         </div>
     </div>
 </body>
